@@ -1,0 +1,99 @@
+<div class="background-image">
+
+
+  <div class="chart-container" style="position: relative; height:40vh; width:60vw">
+    <div style="flex-basis: 50%; display: flex; flex-direction: column; justify-content: space-evenly;">
+      <div style="font-size: 150%; text-align: center;">Your recent activity</div><canvas baseChart
+          [data]="pointdata.Data" [labels]="pointdata.Label"  [chartType]="lineChartType" (chartClick)="chartClicked($event)"></canvas>
+  </div>
+  </div>
+
+  <div class="axis">
+    <span><b>[ Rate v/s Dates ]</b></span>
+  </div>
+
+
+
+  
+
+  <!-- <div>
+  <base-chart class="chart"
+            [datasets]="lineChartData"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [colors]="lineChartColours"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></base-chart>
+
+         </div> -->
+   
+
+    
+    <div class="calenderWrapper">
+        <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+          <div class="cal">
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </div>
+        </mat-form-field>
+    </div>
+
+     
+    <!-- <div *ngFor="let item of data ;let i= index">
+      <div>{{item.name}}</div>
+      <button (click)="details[i]!=!details[i]">show/hide</button>
+      <div *ngIf="details[i]">{{item.details}}</div>
+    </div> -->
+     
+    <!-- <html>
+   <title>Element toggle in angular</title>
+   <body>
+      <div [hidden] = “isShow”>This is a div which toggles.</div>
+      <button (click) = toggleDisplay()>Toggle</button>
+   </body>
+</html>  -->
+
+
+  
+
+        <div class = "notepad-container">
+          <div class = "notepad-background">
+            <div class = "line" *ngFor = "let x of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+            </div>
+          </div>
+        <div class = "notepad-editor" contenteditable="true">
+        </div>
+        </div>
+
+
+
+        <div class="pos-btn">
+        <div class="utility-buttons">
+        <div class="mt">
+        <button  id="btn-moodtracker"  routerLink="/moodtracker"  mat-raised-button color="primary" type="submit"><b>
+          Mood Tracker
+        </b>
+        </button>
+        </div>
+
+        <div class="jo">
+        <button id="btn-journaling" routerLink="/journaling"  mat-raised-button color="primary" type="submit"><b>
+         Journaling
+        </b>
+        </button>
+        </div>
+
+        <div class="chart">
+        <button  id="btn-chart" routerLink="/point" mat-raised-button color="primary" type="submit"><b>
+         Chart
+        </b>
+        </button>
+        </div>
+      </div>
+    </div>
+        
+</div>

@@ -1,0 +1,49 @@
+<div class="background-image">
+<div class="signup-wrapper">
+  <div class="dowhite">
+    <h1 class="text-center mb-5" style="background-color: transparent; font-size: 40pt; font-weight: bold;margin-top: 10px;" >Sign Up</h1>
+  </div>
+
+  <div>
+  
+    <div class="form-group">  
+    <input type="name" class="form-control" placeholder="Username" name="username">
+    </div>
+
+    <div class="form-group">
+    <input type="email" class="form-control" [(ngModel)]="email" placeholder="Email id">
+    </div>
+
+    <div class="form-group">
+    <input type="password"  class="form-control" [(ngModel)]="password" id="pwd" placeholder="Password">
+    </div>
+
+    <div class="form-group">
+    <input type="password" class="form-control" [(ngModel)]="repassword" id="pwd" placeholder="Re-Password">
+    </div>
+
+     <div class="alert">
+     <p *ngIf="errorMessage.length > 0" class="text-danger">
+      {{errorMessage}}</p>
+  
+      <p *ngIf="message.length > 0" class="text-info">
+          {{message}} </p>
+      </div>
+
+    <div class="form-container">
+
+      <span style="background-color:  rgba(0,0,0,0)"  ><b>By signing up, I agree to the privacy policy and the terms of service</b></span>
+        <button (click)="signup()" style="font-size: 250%; " type="submit"><b>
+          Sign Up</b>
+        </button>
+    
+      <span style="background-color: rgba(0,0,0,0)"><b>Already have an account?</b></span>
+        <button  style="font-size: 250%;" routerLink="/login"  type="submit" ><b>
+          Sign In</b>
+        </button>
+
+    </div>
+</div>
+</div>  
+</div>
+

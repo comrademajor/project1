@@ -1,0 +1,112 @@
+<div class="background-image">
+
+ 
+  <div class="speech1"></div>
+  <div class="speech2"></div>
+  
+
+
+    <div class="text">
+      <mark>
+      <b>How was your day?</b>
+    </mark>
+    </div>
+
+
+
+    <div class="arrange">
+    <div class="dropdown">
+      <button class="dropbtn">1,2</button>
+      <div class="dropdown-content">
+        <a href="#">1. Deep breathing always comes to the rescue</a>
+        <a href="#">2. Visualize yourself calm</a>
+        <a href="#">3. Admit and accept your state of mind (anger or anxious)</a>
+      </div>
+    </div>
+
+
+  <div class="dropdown2">
+    <button class="dropbtn2">3,4,5</button>
+    <div class="dropdown-content2">
+      <a href="#">1. Drop your shoulders</a>
+      <a href="#">2. Change your focus </a>
+      <a href="#">3. Get some fresh air</a>
+    </div>
+  </div>
+
+
+<div class="dropdown3">
+  <button class="dropbtn3">6,7,8</button>
+  <div class="dropdown-content3">
+    <a href="#">1. Fuel your body - some carb intake or hydrate yourself</a>
+    <a href="#">2. Relax your body</a>
+    <a href="#">3. Identify pressure points to relieve stress</a>
+  </div>
+</div>
+
+
+<div class="dropdown4">
+  <button class="dropbtn4">9,10</button>
+  <div class="dropdown-content4">
+    <a href="#">Hoping your day was really good</a>
+    <a href="#">Listen to some good music</a>
+    <a href="#">Journal about the things you're grateful for.</a>
+  </div>
+</div>
+
+</div>
+      <!-- <div class="slider">
+        <ngx-slider [(value)]="value" [options]="options">
+          
+        </ngx-slider>
+      </div> -->
+
+      <!-- <div class="btn">
+      <button (click)="toggle()" id="bt">.</button>
+      </div>
+     -->
+        
+     <div class="smalltext">
+       <mark>
+       Which one of the above colors expresses your mood best today?
+      </mark>
+     </div>
+    
+        <div class="m-wrapper">
+          <div class="form-group">  
+           <input type="number" class="form-control" [(ngModel)]=" rate" min="1" max="10" placeholder="Rate your mood between 1-10" name="numeric">
+          </div>
+        </div>
+        <div class="s-wrapper">
+          <div class="form-container" >
+            <button type="submit" (click)="CreateRecord()" [disabled]="!rate">
+              Save
+            </button>
+          </div>
+        </div>
+      
+
+      <div class="utility-buttons">
+        <div class="mt">
+        <button  id="btn-moodtracker"  routerLink="/moodtracker"  mat-raised-button color="primary" type="submit"><b>
+          Mood Tracker
+        </b>
+        </button>
+        </div>
+
+        <div class="jo">
+        <button id="btn-journaling" routerLink="/journaling"  mat-raised-button color="primary" type="submit"><b>
+         Journaling
+        </b>
+        </button>
+        </div>
+
+        <div class="chart">
+        <button  id="btn-chart" routerLink="/point" mat-raised-button color="primary" type="submit"><b>
+         Chart
+        </b>
+        </button>
+        </div>
+      </div>
+
+</div>
