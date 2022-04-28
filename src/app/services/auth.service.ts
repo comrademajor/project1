@@ -12,6 +12,7 @@ providedIn: 'root'
  
 export class AuthenticationService {
 userData: Observable<firebase.User|null>;
+uid!: string;
 authState : any = null;
 constructor(private af: AngularFireAuth,private angularFireAuth: AngularFireAuth, private router : Router, private afs: AngularFirestore) { 
 this.userData = angularFireAuth.authState;
@@ -40,15 +41,15 @@ insertuserdata(user, usercred){
 
 /* Sign in */
 SignIn(email: string, password: string) {
-return this.angularFireAuth
-.signInWithEmailAndPassword(email, password)
-.then(res => {
-  console.log(res)
-console.log('You are Successfully logged in!');
-})
-.catch(err => {
-console.log('Something is wrong:',err.message);
-});
+  return this.angularFireAuth
+    .signInWithEmailAndPassword(email, password)
+    .then((res: any) => {
+      console.log('You are Successfully logged in!');
+      return res;
+    })
+    .catch(err => {
+      console.log('Something is wrong:', err.message);
+    });
 }
  
 /* Sign out */

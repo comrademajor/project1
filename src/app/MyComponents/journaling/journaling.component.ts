@@ -5,6 +5,7 @@ import { Policy } from 'src/app/policy.model';
 import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AuthenticationService } from '../../services/auth.service';
+import { PredictionService } from '../ml/prediction.service';
 
 
 @Component({
@@ -23,8 +24,9 @@ export class JournalingComponent implements OnInit {
   policies!: string;
   journal!: string;
   today1!:string;
+  isPositive!: boolean;
 
-  constructor(private as: AuthenticationService,private policyService: PolicyService,private db: AngularFirestore) { }
+  constructor(private as: AuthenticationService,private policyService: PolicyService,private db: AngularFirestore, private predictionService: PredictionService) { }
   user:any;
 
   ngOnInit(): void {
@@ -59,5 +61,12 @@ export class JournalingComponent implements OnInit {
     console.log(Record,this.user.uid);
     this.policyService.CreateRecord(Record,this.user.uid);
   }
+  predictIfReviewIsPositive(sentence: string) {
+    if(sentence) {
+      const isPositive = this.predictionService.predict(sentence.replace(/<[^>]*>?/gm, ''));
+      this.isPositive = isPositive;
+      console.log(sentence.replace(/<[^>]*>?/gm, ''), isPositive);
+    } 
+ }
 
 }

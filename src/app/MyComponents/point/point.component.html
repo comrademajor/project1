@@ -31,7 +31,7 @@
    
 
     
-    <div class="calenderWrapper">
+    <!-- <div class="calenderWrapper">
         <mat-form-field appearance="fill">
         <mat-label>Choose a date</mat-label>
           <div class="cal">
@@ -40,7 +40,7 @@
             <mat-datepicker #picker></mat-datepicker>
           </div>
         </mat-form-field>
-    </div>
+    </div> -->
 
      
     <!-- <div *ngFor="let item of data ;let i= index">
@@ -59,9 +59,10 @@
 
 
   
-
+     
         <div class = "notepad-container">
           <div class = "notepad-background">
+            <div class = "firebasetext" [innerHTML]="journaldata.journal"></div>
             <div class = "line" *ngFor = "let x of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
             </div>
           </div>

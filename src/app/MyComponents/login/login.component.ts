@@ -29,14 +29,14 @@ export class LoginComponent implements OnInit {
     this.clearErrorMessage();
     if (this.validateForm(this.email, this.password)) {
       this.authservice.SignIn(this.email, this.password)
-        .then(() => {
+        .then((res) => {
+          this.authservice.uid = res.user.uid;
          this.router.navigate(['/menu'])
         }).catch(_error => {
           this.error = _error
         })
     }
   }
-
   validateForm(email, password) {
     if (email.lenght === 0) {
       this.errorMessage = "please enter email id";

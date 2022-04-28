@@ -22,8 +22,11 @@
       <!-- <input type ="text" class="form-control" [(ngModel)]= "journal"> -->
 
       <div class="text">
-      <ejs-richtexteditor  id='defaultRTE' [showCharCount]='true' [maxLength]='maxLength'  #defaultRTE [enableResize]="true"  [(ngModel)]= "journal"></ejs-richtexteditor>
+      <ejs-richtexteditor  id='defaultRTE' [showCharCount]='true' [maxLength]='maxLength'  #defaultRTE [enableResize]="true"  [(ngModel)]= "journal" (ngModelChange)="predictIfReviewIsPositive($event)"></ejs-richtexteditor>
       <div class ="style">
+        <p>
+          {{ isPositive ? '😀' : '🙁' }}
+        </p>
       <link href="https://cdn.syncfusion.com/ej2/material.css" rel="stylesheet" />
       </div>
       </div>
